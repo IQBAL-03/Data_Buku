@@ -1,11 +1,12 @@
 import "./App.css";
+import { useState } from "react";
 
-function Header() {
+function Header({ onTambah }) {
   return (
     <header>
       <h1 id="judul">Data Buku</h1>
       <div className="tambah">
-        <button className="btn-tambah">+ Tambah</button>
+        <button onClick={onTambah} className="btn-tambah">+ Tambah</button>
       </div>
     </header>
   );
@@ -30,17 +31,16 @@ function BukuCard({ judul, penerbit, tahun }) {
 }
 
 function App() {
+  const [showModal, setShowModal] = useState(false);
+
   const buku = [
     { judul: "Neon Genesis Evangelion", penerbit: "M&C", tahun: "1995" },
     { judul: "Look Back", penerbit: "M&C", tahun: "2022" },
-    { judul: "Goodbye, Eri", penerbit: "M&C", tahun: "2022" },
-    { judul: "Detektive Conan", penerbit: "M&C", tahun: "1994" },
-    { judul: "Dorabase", penerbit: "M&C", tahun: "2000" },
-    { judul: "The Doraemons", penerbit: "M&C", tahun: "1991" },
+    { judul: "Goodbye, Eri", penerbit: "M&C", tahun: "2022" }
   ];
   return (
     <div className="App">
-      <Header />
+      <Header onTambah={() => setShowModal(true)} />
       <main>
         <div className="wrap">
           <div className="container">
@@ -54,6 +54,18 @@ function App() {
             ))}
           </div>
         </div>
+
+        {showModal && (
+          <div className="form">
+            <h2>Form Tambah</h2>
+            <form>
+              <input type="text" name="judul" placeholder="Judul Buku"></input>
+              <input type="text" name="penerbit" placeholder="Penerbit Buku"></input>
+              <input type="text" name="tahun" id="tahun" placeholder="Tahun Terbit"></input>
+            </form>
+            <button className="btn-tambah">Simpan</button>
+          </div>
+        )}
       </main>
     </div>
   );

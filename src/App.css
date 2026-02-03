@@ -6,11 +6,14 @@ body {
   background-color: whitesmoke;
   padding: 20px;
 }
+
 .tambah {
   display: flex;
   justify-content: center;
   margin-top: 2rem;
+
 }
+
 .btn-tambah {
   background: linear-gradient(to right, red, orange);
   padding: 15px;
@@ -36,7 +39,7 @@ body {
   background-color: white;
   padding: 2rem 4rem;
   border-radius: 20px;
-  text-align: left;
+  text-align: center;
   position: relative;
   overflow: hidden;
 }
@@ -75,4 +78,129 @@ span {
   border-radius: 5px;
   margin-left: 20px;
   margin-top: 18px;
+}
+
+
+
+.form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  width: 90%;
+  max-width: 400px;
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  z-index: 99999999999999999999999;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.form h2 {
+  margin-top: 0;
+  margin-bottom: 30px;
+  color: #333;
+  font-size: 1.8rem;
+}
+
+.form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form input {
+  padding: 15px;
+  border: 2px solid #f0f0f0;
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.form input:focus {
+  border-color: orange;
+  background-color: #fff9f0;
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.15);
+}
+
+#tahun {
+  color: #666;
+}
+
+.form .btn-tambah {
+  margin-top: 20px;
+  width: 100%;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.form .btn-tambah:hover {
+  background-color: darkred;
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 15px;
+}
+
+.form-header h2 {
+  margin: 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.input-group {
+  margin-bottom: 18px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #eee;
+  border-radius: 10px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: orange;
+  box-shadow: 0 0 8px rgba(255, 165, 0, 0.2);
+}
+
+.form-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.btn-simpan {
+  background: linear-gradient(to right, red, orange);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(255, 69, 0, 0.3);
+}
+
+.btn-simpan:hover {
+  filter: brightness(1.1);
 }
